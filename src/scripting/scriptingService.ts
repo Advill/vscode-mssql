@@ -73,6 +73,9 @@ export class ScriptingService {
                 break;
             case (ScriptOperation.Create):
                 scriptCreateDropOption = 'ScriptCreate';
+                break;
+            case (ScriptOperation.CreateOrAlter):
+                scriptCreateDropOption = 'ScriptCreateOrAlter';
             default:
                 scriptCreateDropOption = 'ScriptCreate';
         }

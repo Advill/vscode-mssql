@@ -331,6 +331,10 @@
           "when": "view == objectExplorer && viewItem =~ /^(AggregateFunction|PartitionFunction|ScalarValuedFunction|StoredProcedure|TableValuedFunction|View)$/"
         },
         {
+          "command": "mssql.scriptCreateOrAlter",
+          "when": "view == objectExplorer && viewItem =~ /^(StoredProcedure|View)$/"
+        },
+        {
           "command": "mssql.disconnectObjectExplorerNode",
           "when": "view == objectExplorer && viewItem == Server"
         },
@@ -468,6 +472,11 @@
       {
         "command": "mssql.scriptAlter",
         "title": "%mssql.scriptAlter%",
+        "category": "MS SQL"
+      },
+      {
+        "command": "mssql.scriptCreateOrAlter",
+        "title": "%mssql.scriptCreateOrAlter%",
         "category": "MS SQL"
       },
       {

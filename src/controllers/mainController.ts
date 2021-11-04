@@ -404,6 +404,14 @@ export default class MainController implements vscode.Disposable {
             Constants.cmdScriptAlter, async (node: TreeNodeInfo) =>
             await this.scriptNode(node, ScriptOperation.Alter)));
 
+        // Script as Create or Alter
+        this._context.subscriptions.push(
+            vscode.commands.registerCommand(
+            Constants.cmdScriptCreateOrAlter, async (node: TreeNodeInfo) =>
+            await this.scriptNode(node, ScriptOperation.CreateOrAlter)
+            )
+        )
+
         // Copy object name command
         this._context.subscriptions.push(
             vscode.commands.registerCommand(Constants.cmdCopyObjectName, async () => {

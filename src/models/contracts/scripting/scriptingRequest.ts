@@ -16,7 +16,8 @@ export enum ScriptOperation {
     Update = 3,
     Delete = 4,
     Execute = 5,
-    Alter = 6
+    Alter = 6,
+    CreateOrAlter = 7
 }
 
 export interface IScriptOptions {

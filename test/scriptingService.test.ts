@@ -156,4 +156,19 @@ suite('Scripting Service Tests', () => {
         const script = await scriptingService.script(testNode, 'test_uri', ScriptOperation.Alter);
         assert.notEqual(script, undefined);
     });
+
+    test('Test Script CreateOrAlter function', async () => {
+        const testNodeMetadata: ObjectMetadata = {
+            metadataType: MetadataType.SProc,
+            metadataTypeName: 'StoredProcedure',
+            urn: undefined,
+            schema: 'dbo',
+            name: 'test_sproc'
+        };
+        const testNode = new TreeNodeInfo('test_table (System Versioned)', undefined, undefined,
+            undefined, undefined, 'StoredProcedure', undefined, undefined, undefined, testNodeMetadata);
+        scriptingService = new ScriptingService(connectionManager.object);
+        const script = await scriptingService.script(testNode, 'test_uri', ScriptOperation.CreateOrAlter);
+        assert.notEqual(script, undefined);
+    });
 });
